@@ -1,0 +1,633 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    grid-template-rows: auto 1fr auto;
+}
+header{
+    width: 80%;
+    height: 60px;
+    background-color: rgb(30, 30, 30);
+    border-radius: 0 0 40px 40px ;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    z-index: 1000;
+}
+header nav ul{
+    display: flex;
+    gap: 40px;
+}
+header nav ul li{
+    list-style: none;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+header .ntpt a{
+    font-family: "NGUYỄN THỊ PHƯƠNG THẢO", serif;
+    font-style: italic;
+    font-weight: 1000;
+    font-size: 25px;
+    color: rgb(216, 24, 10);
+    text-decoration: none;
+}
+main{
+    width: 80%;
+    margin: 80px auto;
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    gap: 80px;
+}
+#trchu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+#trchu img{
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+#trchu .trchu{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+     
+}
+.trchu h1{
+    color: rgb(201, 36, 24);
+}
+.trchu p:nth-child(4){
+    font-size: 15px;
+    color: #aaa;
+    font-style: italic;
+    text-align: justify; 
+}
+.knut{
+    min-width: 200px;
+}
+.knut a{
+    text-decoration: none;
+    border: 1px solid #fc4e04;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 15px;  
+}
+.knut a:hover{
+    background-color: rgb(248, 90, 79);
+    font-weight: bold;
+    color: black;
+}
+.knut a:last-child{
+    margin-left: 15px;
+}
+#gthieu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#gthieu h2{
+    font-weight: 700;
+    font-size: 25px;
+}
+.gthieu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.gthieu p:first-child{
+    color: #aaa;
+    text-align: justify;   
+    font-style: italic;
+    
+}
+.gthieu div{
+    border: 1px solid white;
+    padding: 20px 15px;
+    border-radius: 10px;
+}
+.hocvan,
+.dmanh,
+.muctieu {
+    padding: 25px;
+    transition: 0.2s;
+}
+.hocvan:hover,
+.dmanh:hover,
+.muctieu:hover,
+.cv:hover {
+    border: 1.5px solid rgb(201, 36, 24);
+    font-weight: bold;
+    transition: all 0.5s ;
+    transform: translate(-3px, -3px);
+}
+.hocvan:hover h3,
+.dmanh:hover h3,
+.muctieu:hover h3{
+    color: rgb(216, 24, 10);
+}
+.dmanh div{
+    margin-top: 10px;
+    transition: all 0.3s linear;
+}
+.dmanh div:hover {
+    background-color: #2A1014;
+    border-color: #EF4444;
+    transform: translateX(5px);
+}
+.dmanh div:hover span {
+    color: #EF4444;
+}
+.muctieu li{
+    list-style: none;
+}
+.cv a{
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 5px 10px;
+    color: white;
+}
+.cv a:hover{
+    color: rgb(225, 7, 7);
+    border-color: #fc4e04;
+    background-color: #2A1014;
+    transition: all 0.4s;
+    transform: translateX(10px);
+}
+#kynang{
+    display: flex;
+    flex-direction: column;
+}
+#kynang .khoikn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.khoikn h3{
+    margin-bottom: 10px;
+}
+.kn-khoi{
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 95%;
+    height: 110px;
+}
+.kn-khoi h4{
+    color: rgb(216, 24, 10);
+}
+.kn-khoi p{
+    color: #aaa;
+    font-style: oblique;
+}
+.kn-khoi div{
+    border: 1px solid green;
+    width: 140px;
+    border-radius: 20px;
+    padding: 0 10px;
+    margin: 5px 0 10px;
+}
+.kn-khoi:hover {
+    background-color: #2A1014;
+    border: 1.5px solid white ;
+    opacity: 1;
+    transform: translateY(-8px) scale(1.03);
+    border-color: #EF4444;
+    box-shadow: 4px 8px 25px rgba(239, 68, 68, 0.25);
+    background-color: #2A1014;
+}
+.chuyenmon:has(.kn-khoi:hover) .kn-khoi:not(:hover),
+.botro:has(.kn-khoi:hover) .kn-khoi:not(:hover) {
+    opacity: 0.3;
+    filter: blur(1px);
+}
+#duan{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 150px 1fr;
+    gap: 0 12px;
+    grid-template-areas: 'k1 k1 k1' 'k2 k3 k4';
+}
+.duan-header{
+    grid-area: k1;
+}
+.duan #qlsv{
+    grid-area: k2;
+}
+.duan #ghichu{
+    grid-area: k2;
+}
+.duan #gtbt{
+    grid-area: k3;
+}
+#duan .duan-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#duan .duan-header div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#duan .duan-header div nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    list-style: none;
+}
+#duan .duan-header div nav ul a{
+    color: rgb(216, 24, 10);
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px 20px;
+}
+#duan .duan-header div nav ul li:hover{
+    transform: scale(1.04);
+    box-shadow: 4px 6px 8px rgba(202, 30, 17, 0.18);
+}
+#duan .duan-header div nav ul a:hover{
+    cursor: pointer;
+    border: 1.5px solid white;
+    background-color: #2A1014;
+}
+.duan-header p{
+    color: #aaa;
+    font-style: oblique;
+}
+.duan{
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.duan:hover{
+    transform: translateY(-8px);
+    border: 2px solid white;
+    box-shadow: -6px 8px 18px rgba(201, 36, 24, 0.5) ;
+}
+.duan div:nth-child(5) {
+    height: 150px;
+    margin: 10px auto;
+    font-size: 15px;
+    font-style: oblique;
+}
+.duan h3{
+    color: rgb(201, 36, 24);
+    font-size: 20px;
+}
+.duan span{
+    font-size: 10px;
+    border: 1px solid green;
+    padding: 3px;
+    border-radius: 8px;
+    width: 145px; 
+}
+.duan img{
+    width: 80%;
+    height: 110px;
+    margin: 0 auto;
+}
+.duan p{
+    color: #aaa;
+}
+.duan .duan-congnghe{
+    font-size: 12px;
+    border: 1px solid whitesmoke;
+    border-radius: 8px;
+    width: 145px;
+    height: auto;
+    padding: 0 2px;
+    box-sizing: border-box;
+}
+.duan .duan-congnghe:hover{
+    border-color: green;
+    color: white;
+}
+.duan .nut-chitiet:hover{
+    transition: all 0.2s;
+    transform: translateX(6px);
+}
+.duan .duan-lk{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.duan .duan-lk a{
+    border: 1px solid #1049c2;
+
+}
+
+#knghiem{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.tgian {
+    position: relative;
+    max-width: 850px;
+    margin: 30px auto;
+    padding-left: 35px;
+}
+.tgian::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    bottom: 5px;
+    width: 3px;
+    background-color: #cbd5e1;
+}
+.moctgian {
+    position: relative;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 35px;
+    margin-bottom: 30px;
+}
+.nam {
+    font-weight: bold;
+    color: rgb(196, 36, 24);
+    font-size: 18px;
+    text-align: right;
+    padding-top: 5px;
+}
+.moctgian-nd {
+    background-color: #f8fafc;
+    padding: 18px 22px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 4px 4px 6px rgba(202, 1, 1, 0.65);
+}
+.moctgian-nd::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 13px;
+    height: 13px;
+    background-color: #2563eb;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #2563eb;
+}
+.moctgian-nd h3 {
+    margin: 0 0 8px;
+    color: #141c28;
+}
+.moctgian-nd h4 {
+    margin: 0 0 10px;
+    color: #384457;
+}
+.moctgian-nd p {
+    margin: 0;
+    line-height: 1.7;
+    color: #3d3c3c;
+    font-style: oblique;
+
+}
+.moctgian-nd:hover {
+    transform: translateX(5px);
+    transition: 0.3s;
+    box-shadow: 10px 8px 12px rgb(142, 8, 8);
+    border: 1.5px solid rgb(216, 24, 10);
+}
+
+#lienhe {
+    padding: 30px 4%;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    align-items: start;
+}
+#lienhe h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #1e293b;
+    margin-bottom: 20px;
+    grid-column: 1 / -1;
+}
+.ttin,
+.contact-form {
+    background: #f8fafc;
+    padding: 20px 15px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.15);
+}
+.ttin h3,
+.contact-form h3 {
+    color: #1e293b;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+.ttin p:nth-child(2) {
+    margin-top: 30px;
+    color: #1e293b;
+    font-weight: bold;
+    font-size: 18px;
+}
+.ttin ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.ttin li {
+    padding: 14px 0;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+    overflow-wrap: anywhere;
+}
+.ttin li:last-child {
+    border-bottom: none;
+}
+.ttin a {
+    color: rgb(201, 36, 24);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.ttin a:hover {
+    color: rgb(172, 10, 1);
+    font-weight: bold;
+    text-decoration: underline;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 5px;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    font-family: inherit;
+    background: white;
+    transition: all 0.25s;
+    box-sizing: border-box;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: rgb(172, 10, 1);
+    box-shadow: 0 0 0 3px rgba(158, 18, 18, 0.15);
+}
+.contact-form button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.contact-form button:hover {
+    background: rgb(202, 30, 17);
+    border: 1.5px solid rgb(82, 6, 2);
+    transform: translateY(-3px);
+}
+
+footer {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(30, 30, 30);
+    text-align: center;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+footer>div:first-child h3 {
+    color: rgb(216, 24, 10);
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+footer>div:first-child p{
+    font-size: 10px;
+}
+footer div:nth-child(2) {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+footer div:nth-child(2) p a{
+    text-decoration: none;
+    color: white;
+    font-size: 10px;
+}
+footer div:nth-child(2) a:hover{
+    color: rgb(196, 36, 24);
+    text-decoration: underline;
+}
+footer p:last-child button{
+    font-size: 20px;
+    font-weight: 400;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 8px 15px;
+    background-color: #EF4444;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    color: white;
+}
+footer button:hover{
+    cursor: pointer;
+}
+@media (max-width: 700px) {
+    header{
+        width: 100%;
+        left: 0;
+        border-radius: 0 0 20px 20px;
+        box-sizing: border-box;
+    }
+    header nav ul{
+        gap: 10px;
+    }
+    header .ntpt a {
+        font-size: 20px;
+    }
+    main{
+        width: 90%;
+    }
+    #trchu {
+        flex-direction: column;
+        text-align: center;
+    }
+    .trchu >p:first-child{
+        text-align: center;
+        align-self: center;
+    }
+    .image img {
+        margin: auto;
+    }
+    .knut{
+        margin-left: 30%;
+    }
+    .cv {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+
+
+
+    .tgian {
+        padding-left: 25px;
+    }
+    .tgian::before {
+        left: 8px;
+    }
+    .moctgian {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-left: 25px;
+    }
+    .nam {
+        text-align: left;
+    }
+    .moctgian-nd::before {
+        left: -33px;
+        top: 8px;
+    }
+}
