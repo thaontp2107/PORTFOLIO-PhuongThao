@@ -596,11 +596,14 @@ footer button:hover{
         text-align: center;
         align-self: center;
     }
+    .trchu h1, .trchu h2{
+        align-self: center;
+    }
     .image img {
         margin: auto;
     }
     .knut{
-        margin-left: 30%;
+        align-self: center;
     }
     .cv {
         display: flex;
